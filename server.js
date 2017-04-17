@@ -30,7 +30,7 @@ db.on("error", function(error) {
 //prevent heroku from sleeping
 var http = require("http");
 setInterval(function() {
-    http.get("https://floating-mountain-13593.herokuapp.com");
+    http.get("http://floating-mountain-13593.herokuapp.com");
 }, 1000*60*5); // ping every 5 minutes
 
 /*
