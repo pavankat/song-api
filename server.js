@@ -27,6 +27,12 @@ db.on("error", function(error) {
   console.log("Database Error:", error);
 });
 
+//prevent heroku from sleeping
+var http = require("http");
+setInterval(function() {
+    http.get("https://floating-mountain-13593.herokuapp.com");
+}, 1000*60*5); // ping every 5 minutes
+
 /*
   if we don't do this here then we'll get this error in apps that use this api
 
